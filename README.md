@@ -7,11 +7,11 @@ Workshop participants should come with this setup up and running on their laptop
 
 ## Method
 Instead of explaining all the things related to a Jenkins setup (plugins mainly), we will be using a paradigm `Jenkins` supports which is basically using a bunch of groovy scripts to setup our environment.
-My bloody Jenkins us writtenin
+My bloody Jenkins us written in
 In order to be able to learn the pipeline we assume you will have a:
 1. Jenkins instance,
 2. A git repository with a Dockerfile
-3. An ECR / DockerHub account so we can pus the image there once were done ...
+3. An ECR / DockerHub account so we can push the image there once were done ...
 
 ## My Bloody Jenkins - and opinionated (exactly what we need ...) setup
 This example will:
@@ -131,7 +131,7 @@ At this stage
 
 `docker-compose up -d`
 
-Please note: if it's the first time running my bloody jerkins it will take time to download the image, + perform a reload to Jenkins.
+Please note: if it's the first time running my bloody jenkins it will take time to download the image, + perform a reload to Jenkins.
 
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
