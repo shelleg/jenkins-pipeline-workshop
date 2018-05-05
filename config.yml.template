@@ -1,0 +1,42 @@
+security:
+  realm: jenkins_database
+  adminPassword: MyC0mplexPasswd
+clouds:
+  docker-cloud:
+    type: docker
+    dockerHostUri: 'unix:///var/run/docker.sock'
+    templates:
+      - name: docker-slave
+        image: odavid/jenkins-jnlp-slave:latest
+        labels:
+          - generic
+        remoteFs: /home/jenkins
+        jvmArgs: -Xmx1g
+        volumes:
+          - '/var/run/docker.sock:/var/run/docker.sock'
+        instanceCap: '3'
+credentials:
+  dockerHub:
+    type: userpass
+    username: < dockerhub username >
+    password: < dockerhub password >
+  gitsshkey:
+    type: sshkey
+    description: gitsshkey
+    username: < github username >
+    passphrase: my-ssh-key-passphrase
+    privatekey: |
+      -----BEGIN RSA PRIVATE KEY-----
+      your key here ...
+      -----END RSA PRIVATE KEY-----
+notifiers:
+seed_jobs:
+  gittbook-docker:
+    source:
+      remote: git@github.com:shelleg/docker-gitbook.git
+      branch: 'jenkinsfile'
+      credentialsId: gitsshkey
+    triggers:
+      pollScm: '* * * * *'
+    pipeline: jenkinsfile
+    executeWhen: never
