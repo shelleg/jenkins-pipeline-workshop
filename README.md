@@ -121,7 +121,10 @@ pipeline
 export HOST_IP="$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1)"
 ```
 
-#### 5. Start Jenkins
+#### 6. Copy the `docker-compose.yml.template` to `docker-compose.yml`
+``` cp config.yml.template config.yml ```
+
+#### 7. Start Jenkins
 
 ```
 docker-compose up -d
