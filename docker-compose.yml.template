@@ -28,7 +28,7 @@ services:
       JENKINS_ENV_HOST_IP: ${HOST_IP}
       JENKINS_ENV_CONFIG_YML_URL: file:///config.yml
       JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
-      JENKINS_HTTP_PORT_FOR_SLAVES: 8008
+      JENKINS_HTTP_PORT_FOR_SLAVES: 8080
       AWS_REGION: eu-central-1
       JENKINS_ENV_JENKINS_URL: 'https://ci.exmaple.com'
     networks:
