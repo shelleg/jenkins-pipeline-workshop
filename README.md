@@ -40,7 +40,7 @@ gitsshkey:
   passphrase: my-ssh-key-passphrase
   privatekey: |
     -----BEGIN RSA PRIVATE KEY-----
-    your ssh should be here ...
+    your ssh should be here, with all lines idented to the left as this line is ...
 ```
 #### 3. prepare a docker hub account credentials and add it to the credentials section in `config.yml`
 ```
