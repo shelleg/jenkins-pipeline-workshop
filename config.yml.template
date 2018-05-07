@@ -31,7 +31,7 @@ credentials:
       -----END RSA PRIVATE KEY-----
 notifiers:
 seed_jobs:
-  gittbook-docker:
+  gitbook-docker-jenkins-pipeline-workshop:
     source:
       remote: git@github.com:shelleg/docker-gitbook.git
       branch: 'jenkinsfile'
@@ -40,3 +40,13 @@ seed_jobs:
       pollScm: '* * * * *'
     pipeline: jenkinsfile
     executeWhen: never
+    
+pipeline_libraries:
+  jenkins-pipeline-workshop-library:
+    source:
+      remote: git@github.com:shelleg/jenkins-pipeline-workshop-library.git
+      credentialsId: gitsshkey
+    defaultVersion: master
+    implicit: false
+    allowVersionOverride: true
+    includeInChangesets: true
