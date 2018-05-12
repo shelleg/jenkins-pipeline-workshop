@@ -104,7 +104,7 @@ pipeline
     }
     stage('Publish') {
       steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "" ]){
+        withDockerRegistry([ credentialsId: "dockerHub", url: "https://registry.hub.docker.com" ]){
           script {
                 	// version eq latest git tag
                 	docker.image("$IMAGE").push()
