@@ -136,5 +136,10 @@ docker-compose up -d
 
 Please note: if it's the first time running my bloody jenkins it will take time to download the image, + perform a reload to Jenkins.
 
+#### 8. Browse to Jenkins and validate that build passed OK
+
+Browse to http://localhost:8080 and login as 'admin' user (password is in the config.yml file).
+After the server is loaded OK, a first build should start running.
+
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
