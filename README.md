@@ -128,13 +128,11 @@ export HOST_IP="$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}
 
 #### 7. Start Jenkins
 
+At this stage run:
+
 ```
 docker-compose up -d
 ```
-
-At this stage
-
-`docker-compose up -d`
 
 Please note: if it's the first time running my bloody jenkins it will take time to download the image, + perform a reload to Jenkins.
 
