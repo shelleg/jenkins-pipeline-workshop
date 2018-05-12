@@ -51,6 +51,8 @@ dockerHub:
 ```
 
 #### 4. Choose a repository with a Dockerfile + Jenkinsfile you wish to build and push to dockerHub
+**Please note that for the workshop, the config.yml template file already includes the correct repository settings.**
+
 Please make sure the DockerHub org you are pushing to is defined in your Jenkinsfile (line # 14 -> `PROJECT = 'yourorg/yourimagename'`), you can use the following one as a reference:
 
 ```
