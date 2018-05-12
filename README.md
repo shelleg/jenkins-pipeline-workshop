@@ -21,10 +21,10 @@ This example will:
 3. Instantiate a seed job
 
 ## Pre-requirements
-1. git
-1. A git account
-1. Docker
-1. docker-compose
+1. git (cli installed on laptop)
+1. A GitHub account
+1. Docker (cli installed on laptop and run as daemon or connected to remote Docker server)
+1. docker-compose (cli installed on laptop)
 
 ## Setup steps
 
