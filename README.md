@@ -120,7 +120,7 @@ pipeline
 
 #### 5. set environment variable named `HOST_IP`
 ```
-export HOST_IP="$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1)"
+export HOST_IP="$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1 | sed -e 's/addr://)"
 ```
 
 #### 6. Copy the `docker-compose.yml.template` to `docker-compose.yml`
