@@ -25,6 +25,8 @@ This example will:
 1. A GitHub account
 1. Docker (cli installed on laptop and run as daemon or connected to remote Docker server)
 1. docker-compose (cli installed on laptop)
+1. A Docker hub account (https://hub.docker.com/)
+1. A local clone of this repository (for the template files in it)
 
 ## Setup steps
 
