@@ -30,6 +30,6 @@ services:
       JENKINS_ENV_QUIET_STARTUP_PERIOD: 120
       JENKINS_HTTP_PORT_FOR_SLAVES: 8080
       AWS_REGION: eu-central-1
-      JENKINS_ENV_JENKINS_URL: 'https://localhost:8080'
+      JENKINS_ENV_JENKINS_URL: 'http://localhost:8080'
     networks:
       - proxy
