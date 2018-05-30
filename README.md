@@ -27,8 +27,8 @@ This example will:
 1. docker-compose (cli installed on laptop)
 1. A Docker hub account (https://hub.docker.com/)
 1. A local clone of this repository (for the template files in it), which will be your workspace for this workshop.
-1. A [forked](https://help.github.com/articles/fork-a-repo/) clone of the https://github.com/shelleg/docker-gitbook repository.
 1. A [forked](https://help.github.com/articles/fork-a-repo/) clone of the https://github.com/shelleg/jenkins-pipeline-workshop-library repository.
+1. A [forked](https://help.github.com/articles/fork-a-repo/) clone of the https://github.com/shelleg/docker-gitbook repository.
 
 ## Setup steps
 
@@ -149,6 +149,8 @@ After the server is loaded OK (after restart once for plugins update), a first b
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
 
-### Once you're done with step 8, you're ready for the workshop.
+### Once you're done with last step, you're ready for the workshop.
+
+The workshop tasks are described in the [next page](workshop.md).
 
 
