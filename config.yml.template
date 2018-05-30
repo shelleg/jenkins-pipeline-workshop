@@ -34,7 +34,7 @@ seed_jobs:
   gitbook-docker-jenkins-pipeline-workshop:
     source:
       remote: git@github.com:shelleg/docker-gitbook.git
-      branch: 'jenkinsfile'
+      branch: 'master'
       credentialsId: gitsshkey
     triggers:
       pollScm: '* * * * *'
