@@ -26,11 +26,13 @@ This example will:
 1. Docker (cli installed on laptop and run as daemon or connected to remote Docker server)
 1. docker-compose (cli installed on laptop)
 1. A Docker hub account (https://hub.docker.com/)
-1. A local clone of this repository (for the template files in it)
+1. A local clone of this repository (for the template files in it), which will be your workspace for this workshop.
+1. A [forked](https://help.github.com/articles/fork-a-repo/) clone of the https://github.com/shelleg/docker-gitbook repository.
+1. A [forked](https://help.github.com/articles/fork-a-repo/) clone of the https://github.com/shelleg/jenkins-pipeline-workshop-library repository.
 
 ## Setup steps
 
-#### 1. Copy the `config.yml.template` to `config.yml`
+#### 1. Copy the `config.yml.template` to `config.yml` inside your local repository workspace
 ``` cp config.yml.template config.yml ```
 
 #### 2. prepare a git account with a private ssh-key and add it to the credentials section in `config.yml`
