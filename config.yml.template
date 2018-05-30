@@ -24,10 +24,10 @@ credentials:
     type: sshkey
     description: gitsshkey
     username: < github username >
-    passphrase: my-ssh-key-passphrase
+    passphrase: < your ssh key passphrase if no empty >
     privatekey: |
       -----BEGIN RSA PRIVATE KEY-----
-      your key here ...
+      your ssh should be here, with all lines idented to the left as this line is ...
       -----END RSA PRIVATE KEY-----
 notifiers:
 seed_jobs:
