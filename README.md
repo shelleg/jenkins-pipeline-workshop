@@ -1,4 +1,4 @@
-# jenkins-pipeline-workshop
+# jenkins-pipeline-workshop - get ready for the workshop
 
 ## purpose
 Getting up and running with a simple setup of Jenkins which will enable us to develop pipelines and pipeline libraries.
