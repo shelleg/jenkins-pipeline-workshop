@@ -38,8 +38,8 @@ This example will:
 gitsshkey:
   type: sshkey
   description: gitsshkey
-  username: shelleg
-  passphrase: my-ssh-key-passphrase
+  username: < github username >
+  passphrase: < your ssh key passphrase if no empty >
   privatekey: |
     -----BEGIN RSA PRIVATE KEY-----
     your ssh should be here, with all lines idented to the left as this line is ...
@@ -146,3 +146,7 @@ After the server is loaded OK (after restart once for plugins update), a first b
 
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
+
+### Once you're done with step 8, you're ready for the workshop.
+
+
