@@ -59,7 +59,7 @@ dockerHub:
 seed_jobs:
   gitbook-docker-jenkins-pipeline-workshop:
     source:
-      remote: git@github.com:<gitgub-user>/docker-gitbook.git
+      remote: git@github.com:<github-user>/docker-gitbook.git
       branch: 'master'
       credentialsId: gitsshkey
     triggers:
@@ -73,7 +73,7 @@ seed_jobs:
 pipeline_libraries:
   jenkins-pipeline-workshop-library:
     source:
-      remote: git@github.com:<gitgub-user>/jenkins-pipeline-workshop-library.git
+      remote: git@github.com:<github-user>/jenkins-pipeline-workshop-library.git
       credentialsId: gitsshkey
     defaultVersion: master
     implicit: false
