@@ -107,7 +107,7 @@ After the server is loaded OK (after restart once for plugins update), a first b
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
 
-### 10. Once you're done with last step, you're ready for the workshop.
+#### 10. Once you're done with last step, you're ready for the workshop.
 
 The main task in the workshop is to convert the simple Jenkins Pipeline to a Pipeline that uses a shared library with Steps and complete-flow class.
 
