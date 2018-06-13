@@ -54,84 +54,42 @@ dockerHub:
   password: <dockerhub password>
 ```
 
-#### 4. Choose a repository with a Dockerfile + Jenkinsfile you wish to build and push to dockerHub
-**Please note that for the workshop, the config.yml template file already includes the correct repository settings.**
-
-Please make sure the DockerHub org you are pushing to is defined in your Jenkinsfile (line # 14 -> `PROJECT = 'yourorg/yourimagename'`), you can use the following one as a reference:
-
+#### 4. fork the docker-gitbook repository and set the config.yml to use it instead of the original docker-gitbook repository **
 ```
-pipeline
-{
-    options {
-      buildDiscarder(logRotator(numToKeepStr: '5'))
-    }
-      agent {
-      node {
-        label 'generic'
-        }
-    }
-    environment
-    {
-        VERSION   = 'latest'
-        PROJECT   = 'shelleg/gitbook'
-        IMAGE     = "${PROJECT}/${VERSION}:latest"
-    }
-    stages
-    {
-        stage('Build preparations')
-        {
-            steps
-            {
-                script
-                {
-                    // calculate GIT lastest commit short-hash
-                    gitCommitHash = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                    shortCommitHash = gitCommitHash.take(7)
-                    // calculate a sample version tag
-                    VERSION = shortCommitHash
-                    // set the build display name
-                    currentBuild.displayName = "#${BUILD_ID}-${VERSION}"
-                    IMAGE = "$PROJECT:$VERSION"
-                    IMAGE_LATEST = "$PROJECT:latest"
-                }
-            }
-        }
-    stage('Docker build') {
-      steps {
-          script {
-                  // Build the docker image using a Dockerfile
-                  docker.build("$IMAGE")
-                  // override the latest tag
-                  docker.build("$IMAGE_LATEST")
-      		        }
-	          }
-    }
-    stage('Publish') {
-      steps {
-          script {
-              docker.withRegistry("https://registry.hub.docker.com", "dockerHub"){
-                	// version eq latest git tag
-                	docker.image("$IMAGE").push()
-                	// override the latest tag
-                	docker.image("$IMAGE_LATEST").push()
-             }
-          }
-
-      }
-    }
-  }
-}
+seed_jobs:
+  gitbook-docker-jenkins-pipeline-workshop:
+    source:
+      remote: git@github.com:<gitgub-user>/docker-gitbook.git
+      branch: 'master'
+      credentialsId: gitsshkey
+    triggers:
+      pollScm: '* * * * *'
+    pipeline: jenkinsfile
+    executeWhen: never
 ```
 
-#### 5. set environment variable named `HOST_IP`
+#### 5. fork the jenkins-pipeline-workshop-library repository and set the config.yml to use it instead of the original jenkins-pipeline-workshop-library repository **
+```
+pipeline_libraries:
+  jenkins-pipeline-workshop-library:
+    source:
+      remote: git@github.com:<gitgub-user>/jenkins-pipeline-workshop-library.git
+      credentialsId: gitsshkey
+    defaultVersion: master
+    implicit: false
+    allowVersionOverride: true
+    includeInChangesets: true
+```
+
+#### 6. set environment variable named `HOST_IP`
 ```
 export HOST_IP="$(ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1 | sed -e 's/addr://')"
 ```
 
-#### 6. Copy the `docker-compose.yml.template` to `docker-compose.yml`
+#### 7. Copy the `docker-compose.yml.template` to `docker-compose.yml`
 ``` cp docker-compose.yml.template docker-compose.yml ```
 
-#### 7. Start Jenkins
+#### 8. Start Jenkins
 
 At this stage run:
 
