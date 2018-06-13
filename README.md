@@ -99,7 +99,7 @@ docker-compose up -d
 
 Please note: if it's the first time running my bloody jenkins it will take time to download the image, + perform a reload to Jenkins.
 
-#### 8. Browse to Jenkins and validate that build passed OK
+#### 9. Browse to Jenkins and validate that build passed OK
 
 Browse to http://localhost:8080 and login as 'admin' user (password is in the config.yml file).
 After the server is loaded OK (after restart once for plugins update), a first build should start running.
@@ -107,7 +107,7 @@ After the server is loaded OK (after restart once for plugins update), a first b
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
 
-### Once you're done with last step, you're ready for the workshop.
+### 10. Once you're done with last step, you're ready for the workshop.
 
 The main task in the workshop is to convert the simple Jenkins Pipeline to a Pipeline that uses a shared library with Steps and complete-flow class.
 
