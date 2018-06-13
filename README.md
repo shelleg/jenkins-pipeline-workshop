@@ -109,6 +109,6 @@ Once done you should have something like the following:
 
 ### Once you're done with last step, you're ready for the workshop.
 
-The workshop tasks are described in the [next page](workshop.md).
+The main task in the workshop is to convert the simple Jenkins Pipeline to a Pipeline that uses a shared library with Steps and complete-flow class.
 
 
