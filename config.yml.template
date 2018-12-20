@@ -26,9 +26,7 @@ credentials:
     username: < github username >
     passphrase: < your ssh key passphrase if no empty >
     privatekey: |
-      -----BEGIN RSA PRIVATE KEY-----
-      your ssh should be here, with all lines idented to the left as this line is ...
-      -----END RSA PRIVATE KEY-----
+      ${GIT_PRIVATE_KEY}
 notifiers:
 seed_jobs:
   gitbook-docker-jenkins-pipeline-workshop:
