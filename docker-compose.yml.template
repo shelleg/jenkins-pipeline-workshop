@@ -31,5 +31,6 @@ services:
       JENKINS_HTTP_PORT_FOR_SLAVES: 8080
       AWS_REGION: eu-central-1
       JENKINS_ENV_JENKINS_URL: 'http://localhost:8080'
+      GIT_PRIVATE_KEY: ${GIT_PRIVATE_KEY}
     networks:
       - proxy

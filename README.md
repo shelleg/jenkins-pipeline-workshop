@@ -81,25 +81,20 @@ pipeline_libraries:
     includeInChangesets: true
 ```
 
-#### 6. set environment variable named `HOST_IP`
-```
-export HOST_IP="$(ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print $2}' | head -n 1 | sed -e 's/addr://')"
-```
-
-#### 7. Copy the `docker-compose.yml.template` to `docker-compose.yml`
+#### 6. Copy the `docker-compose.yml.template` to `docker-compose.yml`
 ``` cp docker-compose.yml.template docker-compose.yml ```
 
-#### 8. Start Jenkins
+#### 7. Start Jenkins
 
 At this stage run:
 
 ```
-docker-compose up -d
+. ./jenkins_server.sh start
 ```
 
 Please note: if it's the first time running my bloody jenkins it will take time to download the image, + perform a reload to Jenkins.
 
-#### 9. Browse to Jenkins and validate that build passed OK
+#### 8. Browse to Jenkins and validate that build passed OK
 
 Browse to http://localhost:8080 and login as 'admin' user (password is in the config.yml file).
 After the server is loaded OK (after restart once for plugins update), a first build should start running.
@@ -107,7 +102,7 @@ After the server is loaded OK (after restart once for plugins update), a first b
 Once done you should have something like the following:
 ![](https://www.tikalk.com/media/gittbook-docker__Jenkins_.png)
 
-#### 10. Once you're done with last step, you're ready for the workshop.
+#### 9. Once you're done with last step, you're ready for the workshop.
 
 The main task in the workshop is to convert the simple Jenkins Pipeline to a Pipeline that uses a shared library with Steps and complete-flow class.
 
